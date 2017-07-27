@@ -1,0 +1,26 @@
+tests["Status code is 200"] = responseCode.code === 200;
+
+
+var jsonData = JSON.parse(responseBody);
+
+// To test the name of countries in the json response
+tests["BhutanNameExists"] = jsonData[0].name === "Bhutan";
+tests["IndiaNameExists"] = jsonData[1].name === "India";
+
+
+//To test the region of each data set in the json response
+tests["BhutanRegion"] = jsonData[0].region === "Asia";
+tests["IndiaRegion"] = jsonData[1].region === "Asia";
+
+
+//To test the currencies of each data set in the json response
+tests["BhutanCurrency"] = jsonData[0].currencies[0].code === "BTN";
+tests["IndianCurrency"] = jsonData[1].currencies[0].code === "INR";
+
+//To test the capital of each data data set in the json response
+tests["BhutanCapital"] = jsonData[0].capital === "Thimphu";
+tests["IndianCapital"] = jsonData[1].capital === "New Delhi";
+
+//To test the population of each data data set in the json response
+tests["BhutanPopulation"] = jsonData[0].population === 775620;
+tests["IndianPopulation"] = jsonData[1].population === 1295210000;
